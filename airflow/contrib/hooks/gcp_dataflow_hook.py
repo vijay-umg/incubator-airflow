@@ -69,6 +69,9 @@ class _DataflowJob(object):
                         self._job['name']))
                 elif 'JOB_STATE_RUNNING' == self._job['currentState']:
                     time.sleep(10)
+                elif 'JOB_STATE_PENDING' == self._job['currentState']:
+                    print "job state is pending"
+                    time.sleep(10)
                 else:
                     logging.debug(str(self._job))
                     raise Exception(
